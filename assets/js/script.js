@@ -1,3 +1,21 @@
+// document.addEventListener('DOMContentLoaded', function () {
+//     const preload = document.getElementById('preload');
+//     const targetSection = document.getElementById('target-section');
+  
+//     // Set the time in milliseconds to wait before terminating the loading page
+//     const delay = 3000; // 3000 milliseconds = 3 seconds
+  
+//     // Remove the "preload" element and scroll to the target section after the delay
+//     setTimeout(function () {
+//       preload.style.display = 'none';
+//       targetSection.scrollIntoView({ behavior: 'smooth' });
+//     }, delay);
+//   });
+
+
+
+
+
 'use strict';
 
 const preload = document.querySelector("[data-preload]");
