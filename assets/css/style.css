@@ -50,7 +50,6 @@ body.nav-active{ overflow: hidden; }
 
 
 
-
 .preload {
     position: fixed;
     top: 0;
@@ -62,13 +61,13 @@ body.nav-active{ overflow: hidden; }
     display: grid;
     place-content: center;
     justify-items: center;
-    opacity: 1; /* Initially, set opacity to 1 to make it visible */
-    transition: opacity 0.5s ease-in-out; /* Add a transition for a smoother effect */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
   }
 
   .preload.load {
-    opacity: 0; /* When the content is loaded, set opacity to 0 to hide it */
-    pointer-events: none; /* Disable pointer events to make content behind clickable */
+    opacity: 0;
+    pointer-events: none;
   }
 
   .circle {
@@ -86,23 +85,34 @@ body.nav-active{ overflow: hidden; }
     100% { transform: rotate(1turn); }
   }
 
-  .preload .text {
-    background-image: linear-gradient(90deg, transparent 0% 16.66%);
-    background-size: 500%;
+  .text {
     font-size: calc(2rem + 3vw);
     font-weight: 700;
     line-height: 1em;
     text-transform: uppercase;
     letter-spacing: 16px;
     padding-inline-start: 16px;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 0.5px var(--eerie-black-3);
-    animation: loadingText linear 2s infinite;
+    position: relative;
+    color: black; /* Add a solid black color */
   }
 
-  @keyframes loadingText {
-    0% { background-position: 100%; }
-    100% { background-position: 0%; }
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, red, green, blue, magenta, red);
+    background-size: 200% 100%;
+    animation: moveColor 5s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  @keyframes moveColor {
+    0% { background-position: 200% 0%; }
+    100% { background-position: -200% 0%; }
   }
