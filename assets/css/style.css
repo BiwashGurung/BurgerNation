@@ -111,3 +111,8 @@ body.nav-active{ overflow: hidden; }
     100% {background-position: 0%;}
 
 }
+
+
+.topbar{
+    display: none;
+}
